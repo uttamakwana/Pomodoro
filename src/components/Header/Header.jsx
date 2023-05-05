@@ -1,13 +1,21 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import './header.css'
 
 function Header() {
   return (
     <header id="header">
         <nav id="nav">
             <div className="nav-logo">
-                
+            <Link to="/">Pomodoro-Clone</Link>
             </div>
-            <div className="nav-links"></div>
+            <div className="nav-links">
+                <ul>
+                    <li>Report</li>
+                    <li>Setting</li>
+                    <li>About</li>
+                </ul>
+            </div>
         </nav>
     </header>
   )
