@@ -2,7 +2,14 @@ import React from 'react'
 
 function Header() {
   return (
-    <div>Header</div>
+    <header id="header">
+        <nav id="nav">
+            <div className="nav-logo">
+                
+            </div>
+            <div className="nav-links"></div>
+        </nav>
+    </header>
   )
 }
 
