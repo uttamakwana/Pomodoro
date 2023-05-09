@@ -1,0 +1,69 @@
+#main{
+    background-color: var(--secondary-bg-color);
+    height: calc(100vh - 91px);
+    padding: 1rem;
+    transition: all 1.8s ease;
+}
+
+#main-text{
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--primary-bg-color);
+    font-family: var(--text-fonts);
+
+}
+
+#clock{
+    display: flex;
+    justify-content: center;
+}
+
+#clock-box{
+    height: 300px;
+    width: 600px;
+    padding: 0.5rem;
+    box-shadow: 0 5px 4px var(--primary-bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.clock-box-nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+.clock-box-nav button{
+    width: 33%;
+    padding: 0.8rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    box-shadow: 0 2px 3px var(--primary-bg-color);
+    font-family: var(--text-fonts);
+}
+
+.timer{
+    font-family: var(--text-fonts);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+}
+
+.submitBtns{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.submitBtns button{
+    padding: .8rem;
+    border: none;
+    font-size: 1rem;
+    font-family: var(--text-fonts);
+    background-color: var(--primary-bg-color);
+    color: var(--primary-text-color);
+    font-weight: 600;
+}

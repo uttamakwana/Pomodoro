@@ -11,7 +11,6 @@ function Header() {
             </div>
             <div className="nav-links">
                 <ul>
-                    <li>Report</li>
                     <li>Setting</li>
                     <li>About</li>
                 </ul>
