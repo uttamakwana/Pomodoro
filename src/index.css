@@ -18,7 +18,7 @@ body {
 :root {
   --primary-fonts: "Poppins", sans-serif;
   --secondary-fonts: "Roboto", sans-serif;
-  --text-fonts: "Roboto Mono", sans-serif;
+  --text-fonts: "Inter", sans-serif;
 }
 /* All the color code will be here */
 

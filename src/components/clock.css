@@ -1,0 +1,35 @@
+.clock{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.clock p{
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pomodoro-btns{
+    display: flex;
+    align-items: flex-end;
+    height: 30%;
+    width: 100%;
+    justify-content: center;
+}
+
+.pomodoro-btns button{
+    padding: 1rem;
+    border: 1px solid var(--primary-bg-color);
+    background: transparent;
+    background-color: var(--primary-bg-color);
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    font-family: var(--primary-fonts);
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+}
