@@ -4,6 +4,7 @@ import "../clock.css";
 
 
 function LongBreak() {
+  // Taking states value of time, getTime, isActive, setActive for displaying time and controlling the button
   const { time, getTime, isActive, setIsActive } =
     useContext(StateContext);
   return (
