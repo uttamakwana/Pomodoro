@@ -6,6 +6,7 @@ import LongBreak from "../Longbreak/LongBreak";
 import { StateContext } from "../../StateProvider";
 
 function Main() {
+  //! useContext for taking state values that "StateContext" provides to it's children
   const {
     pomodoro,
     shortBreak,
@@ -16,6 +17,7 @@ function Main() {
     toggleTime,
   } = useContext(StateContext);
 
+  //! This useEffect is important as it calls toggleTime() whenever we shifts into diffrenet clocks!
   useEffect(() => {
     toggleTime();
   }, [pomodoro, shortBreak, longBreak]);
@@ -34,7 +36,6 @@ function Main() {
                   setPomodoro(true);
                   setShortBreak(false);
                   setLongBreak(false);
-                  // console.log("button1");
                   toggleTime();
                   document.getElementById("main").style.backgroundColor =
                     "#60ae97";
@@ -48,8 +49,6 @@ function Main() {
                   setShortBreak(true);
                   setPomodoro(false);
                   setLongBreak(false);
-                  console.log("button2");
-                  toggleTime();
                   document.getElementById("main").style.backgroundColor =
                     "#2d3142";
                 }}
@@ -61,7 +60,6 @@ function Main() {
                   setLongBreak(true);
                   setPomodoro(false);
                   setShortBreak(false);
-                  console.log("button3");
                   toggleTime();
                   document.getElementById("main").style.backgroundColor =
                     "#5f5d65";
