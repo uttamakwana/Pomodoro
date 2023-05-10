@@ -4,6 +4,7 @@ import Main from "../components/Main/Main";
 import StateProvider from "../StateProvider";
 
 function Home() {
+  //! Here StateProvider Component will provide state values to all it's children(<Header /> <Main /> and the children of <Main /> etc...!
   return (
     <StateProvider>
       <main id="home" style={{ height: "100vh" }}>
