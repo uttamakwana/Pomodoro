@@ -30,6 +30,7 @@ function Main() {
         </p>
         <div id="clock">
           <div id="clock-box">
+            {/* buttons for shifting clocks */}
             <div className="clock-box-nav">
               <button
                 onClick={() => {
@@ -68,6 +69,7 @@ function Main() {
                 Long Break
               </button>
             </div>
+            {/* conditinal div rendering */}
             <div className="timer">
               {pomodoro && <Pomodoro />}
               {shortBreak && <ShortBreak />}
