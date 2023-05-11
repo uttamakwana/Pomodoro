@@ -19,6 +19,7 @@
     height: 30%;
     width: 100%;
     justify-content: center;
+    gap: 1rem;
 }
 
 .pomodoro-btns button{

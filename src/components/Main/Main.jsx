@@ -1,9 +1,10 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import "./main.css";
 import Pomodoro from "../Pomodoro/Pomodoro";
 import ShortBreak from "../Shortbreak/ShortBreak";
 import LongBreak from "../Longbreak/LongBreak";
 import { StateContext } from "../../StateProvider";
+import audio from "../../assets/stop.mp3";
 
 function Main() {
   //! useContext for taking state values that "StateContext" provides to it's children
@@ -15,8 +16,21 @@ function Main() {
     setLongBreak,
     setShortBreak,
     toggleTime,
+    time,
+    clockStop,
+    pomodoroTime
   } = useContext(StateContext);
 
+  const audioRef = useRef();
+
+  useEffect(() => {
+    if (clockStop && time === pomodoroTime) {
+      console.log("its working");
+      audioRef.current.play();
+    } else {
+      audioRef.current.pause();
+    }
+  }, [time, clockStop, pomodoro, shortBreak, longBreak]);
   //! This useEffect is important as it calls toggleTime() whenever we shifts into diffrenet clocks!
   useEffect(() => {
     toggleTime();
@@ -24,6 +38,7 @@ function Main() {
 
   return (
     <>
+      <audio src={audio} ref={audioRef}></audio>
       <main id="main">
         <p id="main-text">
           <strong value="Hello there!">Time to focus!!</strong>
@@ -51,7 +66,7 @@ function Main() {
                   setPomodoro(false);
                   setLongBreak(false);
                   document.getElementById("main").style.backgroundColor =
-                    "#2d3142";
+                    "#B2A4FF";
                 }}
               >
                 Short Break

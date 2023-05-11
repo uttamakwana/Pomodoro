@@ -4,7 +4,7 @@ export const StateContext = createContext();
 
 const StateProvider = ({ children }) => {
   // time for pomodoro clock
-  const [pomodoroTime, setPomodoroTime] = useState(25 * 60);
+  const [pomodoroTime, setPomodoroTime] = useState(1 * 5);
   // time for shorbreak clock
   const [shortBreakTime, setShortBreakTime] = useState(5 * 60);
   // time for break clock
@@ -19,6 +19,8 @@ const StateProvider = ({ children }) => {
   const [shortBreak, setShortBreak] = useState(false);
   // longbreak clock is active
   const [longBreak, setLongBreak] = useState(false);
+  // clock stop
+  const [clockStop, setClockStop] = useState(false);
 
   // interval for clock time
   let interval;
@@ -30,6 +32,18 @@ const StateProvider = ({ children }) => {
       interval = setInterval(() => {
         setTime(time - 1);
       }, 1000);
+    }
+
+    if (time === 0) {
+      setClockStop(true);
+      setIsActive(!isActive);
+      if (pomodoro) {
+        setTime(pomodoroTime);
+      } else if (shortBreak) {
+        setTime(shortBreakTime);
+      } else {
+        setTime(longBreakTime);
+      }
     }
     // whether pause is clicked or time becomes negative
     return () => clearInterval(interval);
@@ -81,6 +95,8 @@ const StateProvider = ({ children }) => {
         longBreak,
         setLongBreak,
         toggleTime,
+        clockStop,
+        setClockStop,
       }}
     >
       {children}
